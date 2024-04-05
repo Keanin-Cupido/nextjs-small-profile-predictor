@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const getPredictedAge = async (name: string) => {
     const res = await fetch(`https://api.agify.io/?name=${name}`);
     return res.json();
@@ -26,11 +28,12 @@ export default async function Prediction({params}: Params) {
         countryData
     ]);
 
-    const label = "hello"
     return (
         <div>
             <div>
                 <div>Personal Info</div>
+
+                <img src={`https://api.dicebear.com/8.x/pixel-art/svg?seed=${params.name}`} className="w-[64px] h-[64px]" alt="avatar" />
                 <div>Age: {age?.age}</div>
                 <div>Gender: {gender?.gender}</div>
                 <div>Country: {country?.country[0]?.country_id}</div>
