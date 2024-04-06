@@ -11,7 +11,7 @@
 *,
 *::before,
 *::after {
-  
+  transition: all 0.3s ease;
 }
 
 @media (prefers-color-scheme: dark) {
